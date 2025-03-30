@@ -4,14 +4,12 @@ import firebase_admin
 from firebase_admin import credentials, firestore
 import os
 
-# Get the absolute path to the config directory
-config_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'config'))
-key_path = os.path.join(config_dir, 'serviceAccountKey.json')
+    
 
 # Initialize Firebase Admin SDK if not already initialized
 if not firebase_admin._apps:
     try:
-        cred = credentials.Certificate(key_path)
+        cred = credentials.Certificate(st.secrets['firebase']['my_project_settings '])
         firebase_admin.initialize_app(cred)
     except Exception as e:
         st.error(f"Error initializing Firebase: {str(e)}")
