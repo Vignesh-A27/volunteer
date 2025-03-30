@@ -15,7 +15,7 @@ logger = logging.getLogger(__name__)
 
 class EmailService:
     def __init__(self):
-        self.sender_email = st.secrets['VOL_LINK_EMAIL=']
+        self.sender_email = st.secrets['VOL_LINK_EMAIL']
         self.app_password = st.secrets['VOL_LINK_PASSWORD']
         self.smtp_server = 'smtp.gmail.com'
         self.smtp_port = 465
