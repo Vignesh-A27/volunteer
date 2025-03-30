@@ -15,6 +15,7 @@ load_dotenv()
 if not firebase_admin._apps:
     try:
         firebase_secrets = dict(st.secrets["firebase"]["my_project_settings"])
+        print(firebase_secrets)
         cred = credentials.Certificate(firebase_secrets)
         firebase_admin.initialize_app(cred)
     except Exception as e:
