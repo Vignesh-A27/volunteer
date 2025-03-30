@@ -9,10 +9,7 @@ from dotenv import load_dotenv
 # Load environment variables from .env file
 load_dotenv()
 
-# Get the absolute path to the config directory
-current_dir = os.path.dirname(os.path.abspath(__file__))
-config_dir = os.path.abspath(os.path.join(current_dir, 'config'))
-service_account_path = os.path.join(config_dir, "serviceAccountKey.json")
+
 
 # Initialize Firebase Admin SDK if not already initialized
 if not firebase_admin._apps:
