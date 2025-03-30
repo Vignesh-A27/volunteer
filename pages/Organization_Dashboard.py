@@ -25,7 +25,7 @@ if not st.session_state.get('org_id'):
 # Initialize Firebase Admin SDK if not already initialized
 if not firebase_admin._apps:
     try:
-        cred = credentials.Certificate(st.secrets['firebase']['my_project_settings '])
+        cred = credentials.Certificate(st.secrets['firebase']['my_project_settings'])
         firebase_admin.initialize_app(cred)
     except Exception as e:
         st.error(f"Error initializing Firebase: {str(e)}")
